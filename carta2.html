@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Novia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            position: relative;
+            overflow: auto; /* Permite el desplazamiento vertical */
+        }
+        h1 {
+            color: #4682b4;
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #4682b4;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+            z-index: 1;
+        }
+        .button:hover {
+            background-color: #5a9bd3;
+        }
+        .message {
+            display: none;
+            margin: 20px 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out, max-height 0.5s ease-out;
+            max-height: 0;
+            overflow: hidden;
+            z-index: 1;
+            width: 80%;
+            text-align: left;
+            padding: 20px;
+            border-radius: 12px;
+            background: #e0f7fa;
+        }
+        .message.show {
+            display: block;
+            opacity: 1;
+            max-height: 500px; /* Ajustar según el tamaño de los mensajes */
+        }
+        .gallery {
+            display: none;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 1;
+        }
+        .gallery.show {
+            display: flex;
+            opacity: 1;
+        }
+        .gallery img {
+            margin: 10px;
+            max-width: 200px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .heart {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: float 5s infinite;
+        }
+        .heart::before, .heart::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: red;
+        }
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: -10px;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(-45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Para la persona que más amo en este mundo...</h1>
+    <button class="button" onclick="showMessage(0)">Haz clic aquí</button>
+    <div id="message-0" class="message">En el jardín de mi vida, eres la flor más bella,
+        un destello de colores en mi universo,
+        con tu risa, el mundo cobra vida,
+        con tu amor, mi alma encuentra su verso.
+        
+        Tus ojos, dos luceros en la noche,
+        me guían con su brillo constante,
+        en ellos veo un amor profundo,
+        un sentimiento puro y radiante.
+        
+        Tu voz es la melodía que calma,
+        un susurro que envuelve y abraza,
+        en cada palabra, en cada tono,
+        siento cómo mi corazón se enlaza.
+        
+        Tus caricias, suaves como el terciopelo,
+        dibujan en mi piel un mapa de amor,
+        cada toque es un nuevo comienzo,
+        cada abrazo, un refugio de calor.
+        
+        Eres el faro en mis tormentas,
+        la paz en medio del caos,
+        contigo, cada día es una aventura,
+        cada momento, un regalo preciado.
+        
+        En tus labios encuentro el cielo,
+        en tu mirada, mi destino,
+        te amo más allá de lo imaginable,
+        en ti, he encontrado mi camino.
+        
+        Contigo, todo es posible,
+        cada sueño, una realidad,
+        mi amor por ti es eterno,
+         una historia sin final.</div>
+    <button class="button" onclick="showMessage(1)">Haz clic aquí</button>
+    <div id="message-1" class="message">Eres mi sol en los días grises,
+        la luna que ilumina mi noche oscura,
+        en cada paso, en cada suspiro,
+        mi corazón te busca con ternura.
+        
+        Tus manos, suaves y cálidas,
+        son el refugio donde encuentro paz,
+        en tu abrazo me pierdo, me encuentro,
+        en tu amor, mi vida se entrelaza.
+        
+        Tus palabras, dulces melodías,
+        resuenan en mi mente como un eco,
+        cada "te quiero" es un susurro,
+        que llena mi alma de alegría y sosiego.
+        
+        Tus besos, caricias de miel,
+        encienden en mí una llama eterna,
+        en cada roce, en cada latido,
+        siento cómo mi amor por ti se aferra.
+        
+        Eres la razón de mis sonrisas,
+        el motivo de mi alegría,
+        en tu mirada encuentro mi hogar,
+        en tu amor, mi mayor fantasía.
+        
+        Contigo, el tiempo es un suspiro,
+        un viaje de sueños y esperanzas,
+        en este mundo, solo tú y yo,
+        unidos por siempre en una danza.
+        
+        Te amo con la fuerza del viento,
+        con la calma del mar en serenidad,
+        mi amor por ti es infinito,
+        más allá de la eternidad.</div>
+    <button class="button" onclick="showMessage(2)">Haz clic aquí</button>
+    <div id="message-2" class="message">En el lienzo de mis días, tú eres la luz,
+        un susurro suave en medio del bullicio,
+        la melodía que acaricia mi alma,
+        la razón por la que cada mañana sonrío.
+        
+        Tus ojos, dos estrellas en mi firmamento,
+        guían mi camino, iluminan mi ser,
+        en ellos veo un futuro brillante,
+        donde solo existe el amor, el nuestro, sin perecer.
+        
+        Tu risa es la melodía más dulce,
+        un canto que alegra mi corazón,
+        cada nota, un eco de felicidad,
+        cada sonrisa, una nueva ilusión.
+        
+        Eres la musa de mis sueños,
+        el refugio donde quiero descansar,
+        en tu abrazo encuentro la paz,
+        en tu amor, mi eterno hogar.
+        
+        Contigo, el tiempo se detiene,
+        cada momento es un tesoro,
+        en este viaje juntos, mi amor,
+        tú eres mi único y verdadero oro.
+        
+        Te amo más allá de las palabras,
+        más allá de lo que puedo expresar,
+        eres mi todo, mi siempre, mi ahora,
+        mi amor por ti jamás dejará de brillar.</div>
+    <div class="hearts" id="hearts"></div>
+
+    <script>
+        function showMessage(index) {
+            var message = document.getElementById('message-' + index);
+            message.style.display = 'block';
+            setTimeout(function() {
+                message.classList.add('show');
+            }, 10); // Delay for animation
+        }
+
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.top = `${Math.random() * 100}%`;
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        createHearts();
+    </script>
+</body>
+</html>
